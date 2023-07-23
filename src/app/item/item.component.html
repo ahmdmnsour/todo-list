@@ -1,0 +1,36 @@
+<div class="list-group-item d-flex">
+    <input 
+        type="checkbox" 
+        class="checkbox m-3" 
+        (click)="onCheck(task)"
+        [checked]="task.completed">
+
+    <div class="list-group-item align-items-center d-flex" 
+        *ngIf="!editable">
+        <span
+            class="mb-1 text" 
+            [ngClass]="task.completed? 'strikethrough' : 'null'">{{ task.title }}</span>
+
+        <button
+            type="button" 
+            class="btn btn-light m-1" 
+            (click)="onEdit()">Edit</button>
+
+        <button 
+            type="button" 
+            class="btn btn-danger m-1" 
+            (click)="onDelete(task)">Delete</button>
+    </div>
+    <div class="list-group-item align-items-center d-flex"
+        *ngIf="editable">
+        <input
+            type="text" 
+            class="form-control m-1"
+            [(ngModel)]="task.title">
+
+        <button
+            type="button" 
+            class="btn btn-light m-1" 
+            (click)="onEdit()">Save</button>
+    </div>
+</div>

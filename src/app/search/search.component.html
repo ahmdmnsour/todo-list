@@ -1,0 +1,16 @@
+<div class="input-group">
+    <input 
+        type="search" 
+        [(ngModel)]="searchValue"
+        (keyup)="onSearch()"
+        class="form-control" 
+        placeholder="Search" />
+
+    <button 
+        id="search-button" 
+        type="button" 
+        class="btn btn-primary"
+        (click)="onSearch()">
+        <i class="bi bi-search"></i>
+    </button>
+</div>

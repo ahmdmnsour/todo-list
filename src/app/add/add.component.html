@@ -1,0 +1,16 @@
+<div class="list-group-item align-items-center d-flex">
+    <input 
+      type="text" 
+      class="form-control m-1"
+      [(ngModel)]="taskTitle" 
+      (keyup.enter)="onAdd()">
+  
+    <button 
+      type="button" 
+      class="btn btn-light m-1"
+      (click)="onAdd()">Add</button>
+</div>
+
+<div *ngIf="isMatchingTitle">
+  this task already exist
+</div>
